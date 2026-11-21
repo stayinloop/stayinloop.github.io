@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Join on Loop</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="icon.png">
+<style>
+  :root { --bg:#fafafa; --card:#fff; --ink:#111; --soft:#666; --line:#e2e2e2; --btn:#111; --btnInk:#fff; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0b0b0b; --card:#161616; --ink:#f2f2f2; --soft:#9a9a9a; --line:#2a2a2a; --btn:#fff; --btnInk:#111; } }
+  * { box-sizing:border-box; }
+  body { margin:0; min-height:100vh; display:grid; place-items:center; background:var(--bg); color:var(--ink); font:16px/1.55 -apple-system, BlinkMacSystemFont, "Inter", system-ui, sans-serif; padding:16px; }
+  main { width:min(460px,100%); text-align:center; }
+  img { width:84px; height:84px; border-radius:18px; }
+  h1 { font-size:28px; margin:14px 0 8px; letter-spacing:-.01em; }
+  p { color:var(--soft); margin:0 0 20px; }
+  .go { display:inline-block; background:var(--btn); color:var(--btnInk); text-decoration:none; font-weight:700; font-size:17px; padding:14px 28px; border-radius:999px; }
+  ol { text-align:left; color:var(--soft); background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px 16px 16px 36px; margin:28px 0 0; }
+  li { margin:6px 0; } a { color:inherit; } kbd { font:inherit; font-weight:700; color:var(--ink); }
+  .bad { color:#d33; }
+</style>
+</head>
+<body>
+<main>
+  <img src="icon.png" alt="Loop app icon">
+  <h1>You’re invited to share on Loop</h1>
+  <p id="what">Someone wants to share their gratitude jar, sticky note or calendar with you.</p>
+  <a class="go" id="open" href="#">Open in Loop</a>
+  <ol>
+    <li>Don’t have Loop yet? <a href="./">Download it here</a>, install it and create your account, then come back and click <kbd>Open in Loop</kbd>.</li>
+    <li>If nothing happens, open Loop, click <kbd>Share</kbd> on the jar, sticky note or calendar, and paste this page’s link under <kbd>Have an invite link?</kbd>.</li>
+  </ol>
+</main>
+<script>
+  var code = new URLSearchParams(location.search).get('i') || '';
+  if (!/^[A-Za-z0-9_-]{16,64}$/.test(code)) { document.getElementById('what').innerHTML = '<span class="bad">This invite link looks incomplete. Ask for a new one.</span>'; document.getElementById('open').style.display = 'none'; }
+  else document.getElementById('open').href = 'stayinloop://join?i=' + code;
+</script>
+</body>
+</html>
