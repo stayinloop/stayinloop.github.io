@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loop for Mac</title>
+<meta name="description" content="Loop puts your board right on your Mac's desktop.">
+<link rel="icon" href="icon.png">
+<style>
+  :root { --bg:#fafafa; --card:#fff; --ink:#111; --soft:#666; --line:#e6e6e6; --btn:#111; --btnInk:#fff; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0b0b0b; --card:#161616; --ink:#f2f2f2; --soft:#9a9a9a; --line:#2a2a2a; --btn:#fff; --btnInk:#111; } }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.55 -apple-system, BlinkMacSystemFont, "Inter", system-ui, sans-serif; }
+  main { max-width:620px; margin:0 auto; padding:64px 20px 80px; }
+  header { text-align:center; }
+  header img { width:112px; height:112px; border-radius:24px; }
+  h1 { font-size:40px; letter-spacing:-.02em; margin:18px 0 6px; }
+  .lead { color:var(--soft); font-size:18px; margin:0 0 28px; }
+  .dl { display:inline-block; background:var(--btn); color:var(--btnInk); text-decoration:none; font-weight:600; font-size:18px; padding:15px 30px; border-radius:999px; }
+  .dl:hover { opacity:.88; }
+  .fine { color:var(--soft); font-size:14px; margin-top:12px; }
+  h2 { font-size:22px; margin:56px 0 16px; }
+  ol { list-style:none; padding:0; margin:0; counter-reset:s; }
+  li { counter-increment:s; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px 20px 18px 66px; margin-bottom:12px; position:relative; }
+  li::before { content:counter(s); position:absolute; left:20px; top:17px; width:30px; height:30px; border-radius:50%; background:var(--btn); color:var(--btnInk); font-weight:700; display:grid; place-items:center; font-size:15px; }
+  li b { display:block; font-size:17px; margin-bottom:2px; }
+  li span { color:var(--soft); }
+  .note { border-left:3px solid var(--ink); padding:2px 0 2px 16px; color:var(--soft); margin-top:20px; }
+  kbd { font:inherit; font-weight:600; color:var(--ink); }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="icon.png" alt="Loop app icon">
+    <h1>Loop for Mac</h1>
+    <p class="lead">Your goals, to-dos and notes, right on your desktop.</p>
+    <a class="dl" href="https://github.com/fisherpratt/loop/releases/latest/download/Loop.dmg">Download Loop</a>
+    <p class="fine">Free · Works on any Mac with macOS 11 or newer</p>
+  </header>
+
+  <h2>Install it in four steps</h2>
+  <ol>
+    <li><b>Open the download</b><span>Double-click <kbd>Loop.dmg</kbd> in your Downloads folder.</span></li>
+    <li><b>Drag Loop into Applications</b><span>In the window that opens, drag the Loop icon onto the Applications folder.</span></li>
+    <li><b>Allow it once</b><span>Open Loop from Applications. If your Mac says it can't open it, go to <kbd>System Settings → Privacy &amp; Security</kbd>, scroll down, click <kbd>Open Anyway</kbd>, then <kbd>Open</kbd>. You only do this the first time.</span></li>
+    <li><b>You're in</b><span>Loop becomes your desktop. Click the Loop icon in the menu bar and choose <kbd>Use Loop</kbd> to edit your board. Press <kbd>Esc</kbd> when you're done.</span></li>
+  </ol>
+
+  <p class="note">Your board stays on your own Mac. Want to connect Canvas or Claude, show Loop on every screen or open it when your Mac starts? Those are all in the Loop menu bar menu.</p>
+</main>
+</body>
+</html>
